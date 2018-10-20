@@ -111,12 +111,16 @@ def welcome():
 @app.route('/exampleVoice', methods=['GET', 'POST'])
 def exampleVoice():
     response = VoiceResponse()
-    gather = Gather(input='speech', action='/')
+    gather = Gather(input='speech', action='/printSpeech')
     gather.say('Welcome to Twilio, please tell us why you\'re calling')
     response.append(gather)
     #response.say(gather)
     print(response)
     return str(response)
+
+@app.route('/printSpeech', methods=['GET', 'POST'])
+def printSpeech():
+    print(request.data)
 
 
 if __name__ == "__main__":
