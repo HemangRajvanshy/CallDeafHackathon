@@ -37,7 +37,7 @@ public class TextUI extends AppCompatActivity {
 
         receiveMessage("Hello. This is Bob Ross. Welcome to my art video guide.");
 
-        final Button button = findViewById();
+        final Button button = findViewById(R.id.button);
         final EditText editText = findViewById(R.id.editText);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

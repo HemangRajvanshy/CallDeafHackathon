@@ -7,16 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".TextUI">
 
+    <!--
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_message_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@android:color/blue"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
     </android.support.v7.widget.RecyclerView>
+    -->
 
     <EditText
         android:id="@+id/editText"
@@ -35,7 +36,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <!--app:layout_constraintTop_toBottomOf="@+id/ll" -->
+    <!--app:layout_constraintTop_toBottomOf="@+id/ll"
 
     <TextView
         android:text="hi man, how are you? It's pretty sunny outside."
@@ -46,7 +47,7 @@
         android:padding="8dp"
         android:textColor="#ffffff"
         android:layout_marginTop="4dp"/>
-
+    -->
 
     <Button
         android:id="@+id/button"
@@ -61,7 +62,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!--
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/ll"
@@ -84,6 +85,5 @@
 
 
     </LinearLayout>
-    -->
 
 </android.support.constraint.ConstraintLayout>
