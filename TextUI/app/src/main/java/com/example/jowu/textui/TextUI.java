@@ -111,7 +111,7 @@ public class TextUI extends AppCompatActivity {
                 LayoutParams.WRAP_CONTENT); // Height of TextView
 
         tv.setLayoutParams(lp);
-        tv.setMaxWidth(710);
+        tv.setMaxWidth(700);
         tv.setText(message);
         tv.setTextSize(18);
 
