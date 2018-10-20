@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\1c3bd8c7529e5422d88754cb05da679bf1484f80\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="9296d6f092fcdba4fafb6ac26546a39babdab46a">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e24d3a142eedf0dda13030d7d4d0517466855fbe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.0.3\7d7f60c4783872861222166f6164215f8951c7b1\common-1.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="7d7f60c4783872861222166f6164215f8951c7b1">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\common-1.0.3_acf6433802dc118934a766e20101f0ce6800d5c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\fa1473758e9a29270fa3e3ced015ac6aa5471b18\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="6003d64df88a6ce5e961fa2bad7f1b9b97689ac1">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0754f00cad3de96e90ae7cf281947ef7f06488ec\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\ac5b5147663c8d6750e948becd3e40fd1f265620\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b64dd5f01bc37de289f90fd59299b0c76d119611">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2b2580879df7c0a4de2641be01696f0403152856\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\acf23da74e9e74742cf63b4c23ffbd4853e5e084\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="bcd0bcdef85b31a656af76e39c0c95ce70800772">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3e3a3b94b07fbaa97652a6c95d8daa3bea973af7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\2703bc9258487f30094e360dc51e4890ffeb2b70\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="399f75732ff1ac159f9e73611536f1508bf18d3b">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2cfd83b98bfdf3f1d90bcfa8df5b3b18257e13c1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\64452f386977c076ea0c8829174795fdee0d2233\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="fb022428f7230e33bcae329acf93e7d4a0d89c71">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e5589fd6769b3e5843624e0953c5dc84c54b40d5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\45343750cc255f887160e9200eb6e76ac297fc88\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="210a4042913301c708bd9aeed46e4ebb5d77e462">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_77c8cc1a443f3b89dd4849431efde1a6b4d65fd9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\c1191d22b10ab5b434dd7f88d52668837db65b8f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="25c8cb628374f9a2d59ff9e1172753751e9a9f84">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_711f5598907fd55f12bb395900b1c9712e55dc8b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\da8035da94232f00cfeaaa7ae06ad31fb054c752\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a5fa2e3704f51b30b7b47e12a3a2909728799583">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f1d0ac9c7eb11c456ddc7fd66d14fe1124adeba0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\common-1.0.0_1a7e85614836b1f78a8c857b1a731b977073a9f4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\retrofit\1.9.0\a681c044244d9fc375198588297a39ba78028423\retrofit-1.9.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a681c044244d9fc375198588297a39ba78028423">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-1.9.0_9a72c2894564f8705efe7e551383d12655f2d65f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\4bcd94addcd6e54d0ef74817f3c364fdd75104ed\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="031cc16b7b6e77b3c050134ecab9fa5c2640a069">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cf66e08509f4219483224d863faa1d5332143083\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\51f23563743b2a647be36237aba0704048dba076\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="bdcc2a9572f18b8c90a3a157cab6cdfc97c6c736">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d76728191b95cdf00f8b27abcc30a54dd86a4e1c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\878d9491981e8d5325c984a77bb081406bb73233\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a1aa1dd9917e887bfe732cc5e561ae6ae8f9a84a">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_db03a6fc1fbc25ee7b9792ab5d6022d836154989\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c323c36ecc68965c4cfb460f7721113d2b61ed03">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_ad412d7493914e8279c063c3b9095fcd233948e9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\27.0.2\b9ef4342c934a1a8b107506273dc8061662a322\support-annotations-27.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="0b9ef4342c934a1a8b107506273dc8061662a322">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-27.0.2_bfe514b11d1bb531b026efce2bc230b9e4f3afe2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\e8c8f0f02475b9731651af3b07a80682b65d4250\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b432e82447a3af781e927b9ba0bbb9fe2a496d4a">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1f670c7949a8339f1fcbe1ca35a7443d1841017c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\5a73450589b70063a7cd1183adac6d94781589e7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ed6560f31a6a40b5965f5879d8f2eab1f68def05">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9de144e1911d3cdeb32781535e2408a8405c49b5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\165e72f6c032919f7f335cc8f67793eec6f3b688\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d7cc5473b9cf4ea159a263cd477fb3ecb2987b96">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_178e9488a7afa0d0b7f15364f2cdaf84da435156\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\10c548f277bf9b2e73cce853281fe93f8f85eb5c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b215e312bdc1ee7bfda31674eab5df8bad45c014">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_97e5ade2318164e280db0cf583c563698c222720\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\83a83f376f57512729a99692a383afb70e23183f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="0a5d5553c308643a9022f15513ebdd59e9c78d82">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fc437db3df777461fc7c158ead0bcd523dff33ab\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\d2805f0c5fb6cb6233ee3403981868ba0343ef52\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="fe3916317a699975bcce0cba2d13fd2d8cf88922">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_106c19d3c570a5d2ce806fca2550be5bbe8b8aa2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\d66e92141b385d9801496d00c27e8498b1702e69\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ac2ce6027755bcf49442e70597bec0feb9064f68">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_eca981c92d96c7849a13fe653fdabfa7ef1e2c7b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\040c8e241a19ffd61336688b87b3e9cbb8778295\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="04cd0cacbedcb338f64665b88bad64d145325fbd">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a5457338b6eaf1b7822a37684325ac65f4ede52d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="15aa7249512ee6a8ff95116191b05cf0edf08251">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_44e13b659bf4044b90ac13352f36f996ee24573a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\4b7a44a823f5e37c3e5140e6f74d138896087de5\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="888983f51cf34f57a93ff16832552f2f15937212">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_22aee19661f643fd1b4be24ecc52ceb4edeeef52\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\54aee3105ead21b902fc649c6aa3f593426a0fc6\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="800456ff7459edf31e780604a318741d0f8ace09">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4e8540777bb058f721510af8f826762f0703233f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.3.1_e0affe410b198b1a816167dba624e84aea66b252\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\a1fbfbb3dc61a97505ae5b12f0dd6ea4cfb333d4\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="caa03787689212c10939f308a55a8dc8a3333ed2">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2389be7931c7e4dca9edc52ff9eaed29981312a7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonat\.android\build-cache\7bef7b65c55b754610f46f9447dffa7bb67b53e6\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="618f75fe11febf263e3234c7da7dc892232a5608">
+        <dex dex="C:\Users\jonat\Desktop\voice-quickstart-android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0aa5356d268754a447a31a3a20be19c9d7faff10\classes.dex" />
+    </item>
+
+</items>
