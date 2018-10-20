@@ -60,46 +60,6 @@ def incoming():
   resp.say("Congratulations! You have received your first inbound call! Good bye.")
   return str(resp)
 
-"""
-Makes a call to the specified client using the Twilio REST API.
-"""
-@app.route('/placeCall', methods=['GET', 'POST'])
-def placeCall():
-  account_sid = os.environ.get("ACCOUNT_SID", ACCOUNT_SID)
-  api_key = os.environ.get("API_KEY", API_KEY)
-  api_key_secret = os.environ.get("API_KEY_SECRET", API_KEY_SECRET)
-
-  client = Client(api_key, api_key_secret, account_sid)
-  to = request.values.get("to")
-  call = None
-
-  if to is None or len(to) == 0:
-    call = client.calls.create(url=request.url_root + 'incoming', to='client:' + IDENTITY, from_=CALLER_ID)
-  elif to[0] in "+1234567890" and (len(to) == 1 or to[1:].isdigit()):
-    call = client.calls.create(url=request.url_root + 'incoming', to=to, from_=CALLER_NUMBER)
-  else:
-    call = client.calls.create(url=request.url_root + 'incoming', to='client:' + to, from_=CALLER_ID)
-  return str(call)
-
-"""
-Creates an endpoint that can be used in your TwiML App as the Voice Request Url.
-
-In order to make an outgoing call using Twilio Voice SDK, you need to provide a
-TwiML App SID in the Access Token. You can run your server, make it publicly
-accessible and use `/makeCall` endpoint as the Voice Request Url in your TwiML App.
-"""
-@app.route('/makeCall', methods=['GET', 'POST'])
-def makeCall():
-  resp = VoiceResponse()
-  to = request.values.get("to")
-
-  if to is None or len(to) == 0:
-    resp.say("Congratulations! You have just made your first call! Good bye.")
-  elif to[0] in "+1234567890" and (len(to) == 1 or to[1:].isdigit()):
-    resp.dial(callerId=CALLER_NUMBER).number(to)
-  else:
-    resp.dial(callerId=CALLER_ID).client(to)
-  return str(resp)
 
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
@@ -111,11 +71,12 @@ def welcome():
 @app.route('/exampleVoice', methods=['GET', 'POST'])
 def exampleVoice():
     response = VoiceResponse()
-    gather = Gather(input='speech', action='/printSpeech', method = 'GET', speechTimeout = 3, timeout = 3)
+    gather = Gather(input='speech', action='/printSpeech', method = 'GET', speechTimeout = 2)
+
     gather.say('Welcome to Twilio, please tell us why you\'re calling')
     response.append(gather)
     #response.say(gather)
-    print(response)
+    #print(response)
     return str(response)
 
 @app.route('/printSpeech', methods=['GET', 'POST'])
@@ -124,13 +85,42 @@ def printSpeech():
 
     print(request.args.get("SpeechResult"))
 
-    print(request.data)
     output = "some output" #callinge external function based on request data
 
     response.say(output)
+
     response.say("Do you want to check another stock? Press the pound sign.")
+
+    response.redirect('/takeInput')
     return str(response)
 
+# @app.route('/takeInput', methods = ['GET', 'POST'])
+# def takeInput():
+#     resp = VoiceResponse()
+#     gather = Gather(num_digits=1, action = '/textParse', method = 'GET', timeout = 5)
+#     return str(resp)
+
+@app.route("/takeInput", methods=['GET', 'POST'])
+def voice():
+    """Respond to incoming phone calls with a menu of options"""
+    # Start our TwiML response
+    resp = VoiceResponse()
+
+    # Start our <Gather> verb
+    gather = Gather(num_digits=1, action = '/textParse', method = GET)
+    gather.say('For sales, press 1. For support, press 2.')
+    resp.append(gather)
+
+    # If the user doesn't select an option, redirect them into a loop
+    resp.redirect('/takeInput')
+
+    return str(resp)
+
+@app.route('/textParse', methods=['GET', 'POST'])
+def textParse():
+  response = VoiceResponse()
+  print(request.args + "Poundededded")
+  return str(response)
 
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
