@@ -5,6 +5,9 @@ from twilio.jwt.access_token.grants import VoiceGrant
 from twilio.rest import Client
 from twilio.twiml.voice_response import VoiceResponse
 
+from twilio.twiml.voice_response import Gather, VoiceResponse, Say
+
+
 ACCOUNT_SID = 'AC8de93a520b00a4cf5cdae9c5d28989b8'
 API_KEY = 'SKcc80d07d4a30523fd2d02a67646de63b'
 API_KEY_SECRET = 'h6D7ve022JoKC3Hz91AmdI1RLb6fvAtH'
@@ -103,6 +106,17 @@ def welcome():
   resp = VoiceResponse()
   resp.say("Welcome to Twilio")
   return str(resp)
+
+
+@app.route('/exampleVoice', methods=['GET', 'POST'])
+def exampleVoice():
+    response = VoiceResponse()
+    gather.say('Please enter your account number,\nfollowed by the pound sign')
+    response.append(gather)
+    response.say('We didn\'t receive any input. Goodbye!')
+    print(response)
+    return str(resp)
+
 
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
