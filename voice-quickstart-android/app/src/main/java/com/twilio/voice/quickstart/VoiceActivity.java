@@ -89,6 +89,7 @@ public class VoiceActivity extends AppCompatActivity {
     private NotificationManager notificationManager;
     private AlertDialog alertDialog;
     private CallInvite activeCallInvite;
+
     private Call activeCall;
     private int activeCallNotificationId;
 

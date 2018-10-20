@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.twilio:voice-android-2.0.9">
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/64452f386977c076ea0c8829174795fdee0d2233/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/64452f386977c076ea0c8829174795fdee0d2233/output/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/f9634cb8dd3e09361956da48ea22cab074291447/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/f9634cb8dd3e09361956da48ea22cab074291447/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -1,21 +1,35 @@
-// Follow the steps in https://developers.google.com/mobile/add to generate your own google-services.json file.
 {
   "project_info": {
-    "project_number": "your_project_number",
-    "project_id": "your_project_id"
+    "project_number": "27639826250",
+    "firebase_url": "https://test-6d6ee.firebaseio.com",
+    "project_id": "test-6d6ee",
+    "storage_bucket": "test-6d6ee.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "your_mobilesdk_app_id",
+        "mobilesdk_app_id": "1:27639826250:android:8fe5528108fa08f4",
         "android_client_info": {
           "package_name": "com.twilio.voice.quickstart"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "27639826250-sgga1ipck1pmgap5r37htqpu95r2dfea.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.twilio.voice.quickstart",
+            "certificate_hash": "5c757c4f8bfa2e2b7c565c42fddb7e137cb48266"
+          }
+        },
+        {
+          "client_id": "27639826250-beaqhci77jr4rjtnfm60cc7609k72gei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "your_current_key"
+          "current_key": "AIzaSyBvHjZATJkbFyuFhliLoXcIoIfHWG3qEPI"
         }
       ],
       "services": {
@@ -23,11 +37,16 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27639826250-beaqhci77jr4rjtnfm60cc7609k72gei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
-          "status": 1
+          "status": 2
         }
       }
     }
