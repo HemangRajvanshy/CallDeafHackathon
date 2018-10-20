@@ -111,7 +111,7 @@ def welcome():
 @app.route('/exampleVoice', methods=['GET', 'POST'])
 def exampleVoice():
     response = VoiceResponse()
-    gather = Gather(input='speech', action='/printSpeech')
+    gather = Gather(input='speech', action='/printSpeech', method = 'GET', speechTimeout = 3, timeout = 3)
     gather.say('Welcome to Twilio, please tell us why you\'re calling')
     response.append(gather)
     #response.say(gather)
@@ -120,7 +120,16 @@ def exampleVoice():
 
 @app.route('/printSpeech', methods=['GET', 'POST'])
 def printSpeech():
+    response = VoiceResponse()
+
+    print(request.args.get("SpeechResult"))
+
     print(request.data)
+    output = "some output" #callinge external function based on request data
+
+    response.say(output)
+    response.say("Do you want to check another stock? Press the pound sign.")
+    return str(response)
 
 
 if __name__ == "__main__":
