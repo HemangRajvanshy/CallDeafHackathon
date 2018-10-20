@@ -18,6 +18,7 @@ import android.graphics.Color;
 
 public class TextUI extends AppCompatActivity {
     private String senderName;
+    private Sender s;
 
     public TextUI() {
         senderName = "Bob Ross";
@@ -32,33 +33,22 @@ public class TextUI extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_ui);
 
+        s = new Sender("Bob Ross");
+
         receiveMessage("Hello. This is Bob Ross. Welcome to my art video guide.");
 
-        final Button button = findViewById(R.id.button);
+        final Button button = findViewById();
         final EditText editText = findViewById(R.id.editText);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
-                //display text underneath previous message (like texts)
-                //Log.d(editText.getText().toString(), "hi");
                 sendMessage(editText.getText().toString());
                 editText.setText("");
-                //editText.setText("Hello there");
             }
-
-
         });
     }
 
     private void sendMessage(String message) {
-        //final LinearLayout layout = findViewById(R.id.layout);
-        //setContentView(layout);
-       // layout.setOrientation(LinearLayout.VERTICAL);
-        //TextView textView = new TextView(this);
-        //textView.setText(message);
-        //layout.addView(textView);
-
-        ConstraintSet cs = new ConstraintSet();
 
         LinearLayout ll = (LinearLayout) findViewById(R.id.ll);
         //TextView username =  findViewById(R.id.rightText);
@@ -134,7 +124,4 @@ public class TextUI extends AppCompatActivity {
         ll.addView(callername);
         ll.addView(tv);
     }
-
-
-
 }
