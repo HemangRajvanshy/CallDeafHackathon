@@ -8,5 +8,5 @@ def getQuote(s):
     price = data['delayedPrice']
     return price
 
-quote = getQuote(sys.argv[1])
-print(sys.argv[1] + " is currently worth: $" + str(quote) + " USD. Please note that there is a 15-minute delay on stock-quotes.")
+#quote = getQuote(sys.argv[1])
+#print(sys.argv[1] + " is currently worth: $" + str(quote) + " USD. Please note that there is a 15-minute delay on stock-quotes.")
