@@ -89,7 +89,7 @@ def printSpeech():
 
     response.say(output)
 
-    response.say("Do you want to check another stock? Press the pound sign.")
+
 
     response.redirect('/takeInput')
     return str(response)
@@ -107,8 +107,8 @@ def voice():
     resp = VoiceResponse()
 
     # Start our <Gather> verb
-    gather = Gather(num_digits=1, action = '/textParse', method = GET)
-    gather.say('For sales, press 1. For support, press 2.')
+    gather = Gather(num_digits=1, action = '/textParse', method = 'GET')
+    gather.say('To check another stock, press 1. Otherwise, hang up bro.')
     resp.append(gather)
 
     # If the user doesn't select an option, redirect them into a loop
@@ -119,7 +119,22 @@ def voice():
 @app.route('/textParse', methods=['GET', 'POST'])
 def textParse():
   response = VoiceResponse()
-  print(request.args + "Poundededded")
+  print(request.args['Digits'])
+
+  gather = Gather(action = '/')
+
+  print(request.args['Digits'] == "1")
+
+  if (request.args['Digits'] == "1"):
+    response.redirect('/exampleVoice')
+    print("did this trigger")
+    response.append(gather)
+    return str(response)
+  else:
+    print("else trigggered")
+    gather.say("goodbye")
+    response.append(gather)
+    return str(response)
   return str(response)
 
 if __name__ == "__main__":
