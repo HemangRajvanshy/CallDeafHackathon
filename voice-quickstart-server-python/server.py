@@ -111,11 +111,12 @@ def welcome():
 @app.route('/exampleVoice', methods=['GET', 'POST'])
 def exampleVoice():
     response = VoiceResponse()
-    gather.say('Please enter your account number,\nfollowed by the pound sign')
+    gather = Gather(input='speech', action='/')
+    gather.say('Welcome to Twilio, please tell us why you\'re calling')
     response.append(gather)
-    response.say('We didn\'t receive any input. Goodbye!')
+    #response.say(gather)
     print(response)
-    return str(resp)
+    return str(response)
 
 
 if __name__ == "__main__":
