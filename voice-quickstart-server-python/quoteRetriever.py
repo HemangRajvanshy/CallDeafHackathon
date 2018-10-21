@@ -2,40 +2,41 @@ import sys
 import requests
 
 def getQuote(s):
-    success, price = try_Ticker(s)
+    result, success = try_Ticker(s)
     if success:
-        return success, price
+        return result, success
 
     return try_Name(s)
 
 def try_Name(s):
+    name = ""
     if get_name(s) != None:
-        URL = "https://api.iextrading.com/1.0/stock/" + str(get_name(s)) + "/delayed-quote"
+        name = get_name(s)[1]
+        URL = "https://api.iextrading.com/1.0/stock/" + str(get_name(s)[0]) + "/delayed-quote"
     else:
         URL = "https://api.iextrading.com/1.0/stock/notastock/delayed-quote"
 
-    success = True;
-    response = requests.get(url = URL)
-    price = -1
-    if response.status_code != 200:
-        success = False;
-    else:
-        data = response.json()
-        price = data['delayedPrice']
-    return success, price
+    return tryRun(URL, name)
 
 def try_Ticker(s):
     URL = "https://api.iextrading.com/1.0/stock/" + s + "/delayed-quote"
     #print(URL)
+    return tryRun(URL, s)
+
+def tryRun(URL, s):
     success = True;
     response = requests.get(url = URL)
-    price = -1
+    res = "mmh"
     if response.status_code != 200:
         success = False;
+        res = "failed"
     else:
         data = response.json()
         price = data['delayedPrice']
-    return success, price
+        high = data['high']
+        low = data['low']
+        res = s + ". Current stock price is " + str(price) + " last business day's low was " + str(low) + " and the high was " + str(high)
+    return res, success
 
 def get_name(symbol):
     url = "http://d.yimg.com/autoc.finance.yahoo.com/autoc?query={}&region=1&lang=en".format(symbol)
@@ -48,7 +49,7 @@ def get_name(symbol):
         name = x['name'].lower()
 
         if name[0:4] == symbol[0:4]:
-            return x['symbol'].replace(".", "-").split("-", 1)[0]
+            return x['symbol'].replace(".", "-").split("-", 1)[0], x['name']
 
 
 # company = get_name("Tesla")

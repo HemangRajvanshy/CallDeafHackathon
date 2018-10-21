@@ -66,7 +66,7 @@ def incoming():
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
   resp = VoiceResponse()
-  resp.say("Welcome to Stock, please tell us why you\'re calling")
+  resp.say("Welcome to Project Name TBD, please tell us why you\'re calling")
   resp.redirect("/exampleVoice")
   return str(resp)
 
@@ -86,11 +86,11 @@ def printSpeech():
     print(s)
     s = stringSanitize.stringClean(s)
 
-    succ, price = quoteRetriever.getQuote(s)
+    res, succ = quoteRetriever.getQuote(s)
     output = ""
 
     if succ:
-      output = "Stock price of " + str(s) + " is " + str(price) #callinge external function based on request data
+      output = "Stock info of stock: " + str(res) #callinge external function based on request data
       response.say(output)
       response.redirect('/takeInput')
     else:
