@@ -2,6 +2,7 @@ import sys
 import requests
 
 def getInfo(name):
+    name = name.lower()
     URL = "https://www.blackrock.com/tools/hackathon/portfolio-analysis"
     company = name + '~100'
     PARAMS = {'positions' : name}
@@ -14,6 +15,6 @@ def getInfo(name):
     #print(data)
     #print(dailyChange)
     dailyChange = data["resultMap"]['PORTFOLIOS'][0]["portfolios"][0]["returns"]["latestPerf"]["oneDay"]
-    print(dailyChange)
+    return dailyChange
 
-getInfo(sys.argv[1])
+#getInfo(sys.argv[1])

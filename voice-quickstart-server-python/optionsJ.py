@@ -4,12 +4,6 @@ import json
 def getOptions(abbreviation):
     url = "https://query1.finance.yahoo.com/v7/finance/options/" + abbreviation
     result = requests.get(url).json()
-    #print(result)
-    #calls = result["optionChain"]["result"][0]["calls"]
-    #puts = result["optionChain"]["result"][0]["puts"]
-    #print(puts)
-    #print()
-    #print(calls)
     calls = result["optionChain"]["result"][0]["options"][0]['calls']
     puts = result["optionChain"]["result"][0]['options'][0]['puts']
     retDict={}
@@ -17,7 +11,7 @@ def getOptions(abbreviation):
     retDict['puts']=puts
     return retDict
 
-getOptions("AAPL")
+#getOptions("AAPL")
 
 def getNearMoneyOptions(optionDict, price):
     callList=[]
@@ -41,4 +35,4 @@ def getNearMoneyOptions(optionDict, price):
             putList.append(contractDataDict)
     return callList, putList
 
-print(getNearMoneyOptions(getOptions("AAPL"), 219))
+#print(getNearMoneyOptions(getOptions("AAPL"), 219))

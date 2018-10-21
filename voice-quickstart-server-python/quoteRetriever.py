@@ -1,5 +1,7 @@
 import sys
 import requests
+import json
+import stockInfo
 
 def getQuote(s):
     result, success = try_Ticker(s)
@@ -35,7 +37,12 @@ def tryRun(URL, s):
         price = data['delayedPrice']
         high = data['high']
         low = data['low']
-        res = s + ". Current stock price is " + str(price) + " last business day's low was " + str(low) + " and the high was " + str(high)
+        symb = data['symbol']
+        #print(stockInfo.getInfo(symb))
+        #print(symb)
+        #print("Test test test")
+        change = round(100*stockInfo.getInfo(symb), 2)
+        res = s + ". Current stock price is. " + str(price) + "dollars. last business day's low was. " + str(low) + " dollars and the high was. " + str(high) + " dollars." + " The price change since yesterday is " + str(change) + " percent."
     return res, success
 
 def get_name(symbol):

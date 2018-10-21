@@ -53,20 +53,11 @@ def token():
 
   return token.to_jwt()
 
-"""
-Creates an endpoint that plays back a greeting.
-"""
-@app.route('/incoming', methods=['GET', 'POST'])
-def incoming():
-  resp = VoiceResponse()
-  resp.say("Congratulations! You have received your first inbound call! Good bye.")
-  return str(resp)
-
 
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
   resp = VoiceResponse()
-  resp.say("Welcome to Project Name TBD, please tell us why you\'re calling")
+  resp.say("Welcome to StockBot, what stock would you like 0to know about?")
   resp.redirect("/exampleVoice")
   return str(resp)
 
@@ -90,7 +81,7 @@ def printSpeech():
     output = ""
 
     if succ:
-      output = "Stock info of stock: " + str(res) #callinge external function based on request data
+      output = "Stock summary: " + str(res) #callinge external function based on request data
       response.say(output)
       response.redirect('/takeInput')
     else:
@@ -114,7 +105,7 @@ def voice():
 
     # Start our <Gather> verb
     gather = Gather(num_digits=1, action = '/textParse', method = 'GET')
-    gather.say('To check another stock, press 1. Otherwise, hang up bro.')
+    gather.say('To check another stock, say stock. To check near the money options for this stock, say options.')
     resp.append(gather)
 
     # If the user doesn't select an option, redirect them into a loop
