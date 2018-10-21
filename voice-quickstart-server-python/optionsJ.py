@@ -36,3 +36,30 @@ def getNearMoneyOptions(optionDict, price):
     return callList, putList
 
 #print(getNearMoneyOptions(getOptions("AAPL"), 219))
+
+def generateOptionsString(callList, putList):
+    statementString = ""
+    statementString = "Your near the money call options are as follows."
+    for x in callList:
+        if (x['inTheMoney']):
+            statementString += "This option is an in the money "
+        else:
+            statementString += "This option is an out of the money "
+
+        statementString += "option with a strike price of" + str(x['strike']) + "dollars. It is worth " + str(x['lastPrice']) + " dollars. " + "This has traded at a volume of" + str(x['volume']) + "."
+    for x in putList:
+        if (x['inTheMoney']):
+            statementString += "This option is an in the money "
+        else:
+            statementString += "This option is an out of the money "
+
+        statementString += "option with a strike price of" + str(x['strike']) + "dollars. It is worth " + str(x['lastPrice']) + " dollars. " + "This has traded at a volume of" + str(x['volume']) + "."
+    return statementString
+
+
+#callList, putList = getNearMoneyOptions(getOptions("AAPL"), 219)
+#print(callList)
+#print(putList)
+#print(generateOptionsString(callList,putList))
+#generateOptionsString(getNearMoneyOptions("AAPL", 219))
+

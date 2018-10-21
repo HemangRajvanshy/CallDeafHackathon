@@ -7,7 +7,7 @@ from twilio.rest import Client
 from twilio.twiml.voice_response import VoiceResponse
 
 from twilio.twiml.voice_response import Gather, VoiceResponse, Say
-
+import optionsJ
 import stringSanitize
 
 ACCOUNT_SID = 'AC8de93a520b00a4cf5cdae9c5d28989b8'
@@ -27,7 +27,7 @@ The caller id used when a client is dialed.
 CALLER_ID = 'client:quick_start'
 IDENTITY = 'alice'
 
-
+tik = ""
 app = Flask(__name__)
 
 """
@@ -57,7 +57,7 @@ def token():
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
   resp = VoiceResponse()
-  resp.say("Welcome to StockBot, what stock would you like 0to know about?")
+  resp.say("Welcome to StockBot, what stock would you like to know about?")
   resp.redirect("/exampleVoice")
   return str(resp)
 
@@ -65,17 +65,18 @@ def welcome():
 @app.route('/exampleVoice', methods=['GET', 'POST'])
 def exampleVoice():
     response = VoiceResponse()
-    gather = Gather(input='speech', action='/printSpeech', method = 'GET', speechTimeout = 2)
+    gather = Gather(input='speech', action='/printSpeech', method = 'GET', speechTimeout = 1)
     response.append(gather)
     return str(response)
 
 @app.route('/printSpeech', methods=['GET', 'POST'])
 def printSpeech():
     response = VoiceResponse()
-
+    global tik
     s = request.args.get("SpeechResult")
     print(s)
     s = stringSanitize.stringClean(s)
+    tik = s
 
     res, succ = quoteRetriever.getQuote(s)
     output = ""
@@ -104,7 +105,11 @@ def voice():
     resp = VoiceResponse()
 
     # Start our <Gather> verb
-    gather = Gather(num_digits=1, action = '/textParse', method = 'GET')
+
+    gather = Gather(input='speech', action='/textParse', hints = "stock, options", method = 'GET', speechTimeout = 2)
+    #resp.append(gather)
+
+    #gather = Gather(num_digits=1, action = '/textParse', method = 'GET')
     gather.say('To check another stock, say stock. To check near the money options for this stock, say options.')
     resp.append(gather)
 
@@ -118,19 +123,36 @@ def textParse():
   response = VoiceResponse()
   #print(request.args['Digits'])
 
-  gather = Gather(action = '/')
+ # gather = Gather(action = '/')
 
   #print(request.args['Digits'] == "1")
+  s = request.args.get("SpeechResult")
+  print(s)
+  print("WE printing here bois")
 
-  if (request.args['Digits'] == "1"):
-    response.say("Please give me another stock")
+  if s == 'options':
+    response.say('Some near the money options are: ')
+    response.redirect('/handleOption')
+  if s == 'stock':
+    response.say('What stock would you like to know about?')
     response.redirect('/exampleVoice')
-    response.append(gather)
-    return str(response)
   else:
-    gather.say("goodbye")
-    response.append(gather)
-    return str(response)
+    response.say("Sorry but I do not recognize " + str(s) + " as a valid command. Try again.")
+    response.redirect('/takeInput')
+
+  return str(response)
+
+@app.route('/handleOption', methods=['GET', 'POST'])
+def handleOption():
+  response = VoiceResponse()
+
+  name, price = quoteRetriever.getTik()
+  callList, putList = optionsJ.getNearMoneyOptions(optionsJ.getOptions(name), price)
+  response.say(optionsJ.generateOptionsString(callList,putList))
+
+  response.redirect('/takeInput')
+
+  return str(response)
 
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))

@@ -3,6 +3,9 @@ import requests
 import json
 import stockInfo
 
+tik = ""
+itmp = 0
+
 def getQuote(s):
     result, success = try_Ticker(s)
     if success:
@@ -26,11 +29,12 @@ def try_Ticker(s):
     return tryRun(URL, s)
 
 def tryRun(URL, s):
-    success = True;
+    global tik, itmp
+    success = True
     response = requests.get(url = URL)
     res = "mmh"
     if response.status_code != 200:
-        success = False;
+        success = False
         res = "failed"
     else:
         data = response.json()
@@ -38,12 +42,18 @@ def tryRun(URL, s):
         high = data['high']
         low = data['low']
         symb = data['symbol']
+        tik = symb
+        itmp = price
         #print(stockInfo.getInfo(symb))
         #print(symb)
         #print("Test test test")
         change = round(100*stockInfo.getInfo(symb), 2)
         res = s + ". Current stock price is. " + str(price) + "dollars. last business day's low was. " + str(low) + " dollars and the high was. " + str(high) + " dollars." + " The price change since yesterday is " + str(change) + " percent."
     return res, success
+
+def getTik():
+    global tik, itmp
+    return tik, itmp
 
 def get_name(symbol):
     url = "http://d.yimg.com/autoc.finance.yahoo.com/autoc?query={}&region=1&lang=en".format(symbol)
