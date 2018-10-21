@@ -1,4 +1,5 @@
 import os
+import quoteRetriever
 from flask import Flask, request
 from twilio.jwt.access_token import AccessToken
 from twilio.jwt.access_token.grants import VoiceGrant
@@ -64,7 +65,8 @@ def incoming():
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
   resp = VoiceResponse()
-  resp.say("Welcome to Twilio")
+  resp.say("Welcome to Stock, please tell us why you\'re calling")
+  resp.redirect("/exampleVoice")
   return str(resp)
 
 
@@ -72,26 +74,28 @@ def welcome():
 def exampleVoice():
     response = VoiceResponse()
     gather = Gather(input='speech', action='/printSpeech', method = 'GET', speechTimeout = 2)
-
-    gather.say('Welcome to Twilio, please tell us why you\'re calling')
     response.append(gather)
-    #response.say(gather)
-    #print(response)
     return str(response)
 
 @app.route('/printSpeech', methods=['GET', 'POST'])
 def printSpeech():
     response = VoiceResponse()
 
-    print(request.args.get("SpeechResult"))
+    s = request.args.get("SpeechResult")
+    print(s)
 
-    output = "some output" #callinge external function based on request data
+    succ, price = quoteRetriever.getQuote(s)
+    output = ""
 
-    response.say(output)
+    if succ:
+      output = "Stock price of " + str(s) + " is " + str(price) #callinge external function based on request data
+      response.say(output)
+      response.redirect('/takeInput')
+    else:
+      output = "Couldn't find stock named" + str(s) + " . Please try again."
+      response.say(output)
+      response.redirect('/exampleVoice')
 
-
-
-    response.redirect('/takeInput')
     return str(response)
 
 # @app.route('/takeInput', methods = ['GET', 'POST'])
@@ -119,23 +123,21 @@ def voice():
 @app.route('/textParse', methods=['GET', 'POST'])
 def textParse():
   response = VoiceResponse()
-  print(request.args['Digits'])
+  #print(request.args['Digits'])
 
   gather = Gather(action = '/')
 
-  print(request.args['Digits'] == "1")
+  #print(request.args['Digits'] == "1")
 
   if (request.args['Digits'] == "1"):
+    response.say("Please give me another stock")
     response.redirect('/exampleVoice')
-    print("did this trigger")
     response.append(gather)
     return str(response)
   else:
-    print("else trigggered")
     gather.say("goodbye")
     response.append(gather)
     return str(response)
-  return str(response)
 
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
