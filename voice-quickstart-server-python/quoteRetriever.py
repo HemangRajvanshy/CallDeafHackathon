@@ -6,16 +6,18 @@ def getQuote(s):
     if success:
         return success, price
 
-    success, price = try_Name(s)
+    return try_Name(s)
 
 def try_Name(s):
-    URL = "https://api.iextrading.com/1.0/stock/" + get_name(s) + "/delayed-quote"
-    #print(URL)
+    if get_name(s) != None:
+        URL = "https://api.iextrading.com/1.0/stock/" + str(get_name(s)) + "/delayed-quote"
+    else:
+        URL = "https://api.iextrading.com/1.0/stock/notastock/delayed-quote"
+
     success = True;
     response = requests.get(url = URL)
     price = -1
     if response.status_code != 200:
-
         success = False;
     else:
         data = response.json()
@@ -49,9 +51,9 @@ def get_name(symbol):
             return x['symbol'].replace(".", "-").split("-", 1)[0]
 
 
-company = get_name("international")
+# company = get_name("Tesla")
 
-print(company)
+# print(company)
 
-#quote = getQuote(sys.argv[1])
-#print(sys.argv[1] + " is currently worth: $" + str(quote) + " USD. Please note that there is a 15-minute delay on stock-quotes.")
+# quote = getQuote(sys.argv[1])
+# print(sys.argv[1] + " is currently worth: $" + str(quote) + " USD. Please note that there is a 15-minute delay on stock-quotes.")
