@@ -40,6 +40,13 @@ def getNearMoneyOptions(optionDict, price):
 def generateOptionsString(callList, putList):
     statementString = ""
     statementString = "Your near the money call options are as follows."
+
+    if (len(callList) > 2):
+        callList=callList[1:-1]
+    if (len(putList) > 2):
+        putList=putList[1:-1]
+
+
     for x in callList:
         if (x['inTheMoney']):
             statementString += "This option is an in the money "
