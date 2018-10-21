@@ -8,7 +8,9 @@ def stringClean(s):
         listOfString[x]=listOfString[x].strip(',')
         if listOfString[x] in removeThese:
             listOfString[x] = ""
-        retS += listOfString[x] + " "
+    listOfString = list(set(listOfString))
+    for x in listOfString:
+        retS += x + " "
     return retS.strip(" ")
     
         
