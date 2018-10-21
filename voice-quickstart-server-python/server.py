@@ -8,6 +8,7 @@ from twilio.twiml.voice_response import VoiceResponse
 
 from twilio.twiml.voice_response import Gather, VoiceResponse, Say
 
+import stringSanitize
 
 ACCOUNT_SID = 'AC8de93a520b00a4cf5cdae9c5d28989b8'
 API_KEY = 'SKcc80d07d4a30523fd2d02a67646de63b'
@@ -83,6 +84,7 @@ def printSpeech():
 
     s = request.args.get("SpeechResult")
     print(s)
+    s = stringSanitize.stringClean(s)
 
     succ, price = quoteRetriever.getQuote(s)
     output = ""
